@@ -29,7 +29,10 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "..."
+        run: echo "$exec executed on port $PORT using MONGODB_DB_NAME $MONGODB_DB_NAME "
+        env:
+          exec: Test
+
   deploy:
     needs: test
     runs-on: ubuntu-latest
